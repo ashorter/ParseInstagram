@@ -1,62 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    android:gravity="center_horizontal"
-    android:padding="16dp" >
+    tools:context=".MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+    <FrameLayout
+        android:id="@+id/flContainer"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        />
 
-    <EditText
-        android:id="@+id/etDescription"
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Description"
-        android:textColorHint="#ffffff"
-        android:inputType="none"/>
-
-    <Button
-        android:id="@+id/btnCaptureImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Take Picture!"
-        android:backgroundTint="#3897f0"
-        android:textColor="#ffffff"/>
-
-    <ImageView
-        android:id="@+id/ivPostImage"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        tools:srcCompat="@tools:sample/avatars"/>
-
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Input"
-        android:backgroundTint="#3897f0"
-        android:textColor="#ffffff"/>
-
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:backgroundTint="#3897f0"
-        android:textColor="#ffffff"/>
-
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@android:color/background_light"
+        app:itemIconTint="@android:color/black"
+        app:itemTextColor="@color/instaMain"
+        app:menu="@menu/menu_bottom_navigation" />
+</RelativeLayout>
